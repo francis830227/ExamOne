@@ -40,36 +40,31 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         view.addGestureRecognizer(tapRecognizer)
     }
     
-
-
+    
     @IBAction func pickAnImageButtonPressed(_ sender: UIButton) {
-        
-        self.showAlbum()
+        let imagePicker = UIImagePickerController()
+        imagePicker.sourceType = .photoLibrary
+        imagePicker.delegate = self
+        present(imagePicker, animated: true, completion: nil)
     }
     
-    func showAlbum() {
-        let cameraPicker = UIImagePickerController()
-        cameraPicker.delegate = self
-        cameraPicker.sourceType = .photoLibrary
-        
-        present(cameraPicker, animated: true, completion: nil)
-    }
-
-    
-    func setupNewImage(_ image: UIImage) {
-        
-        imageView.image = image
-        
+    func imagePickerControllerDidCancel(picker: UIImagePickerController) {
+        dismiss(animated: true, completion: nil)
     }
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String: Any]) {
         
-        
-        let image = info[UIImagePickerControllerOriginalImage] as! UIImage
-        setupNewImage(image)
+        if let selectedImage = info[UIImagePickerControllerEditedImage] as? UIImage {
+        imageView.image = selectedImage
         imageView.contentMode = .center
-        imageView.frame = CGRect(x: 0, y: 0, width: image.size.width, height: image.size.height)
-        scrollView.contentSize = image.size
+        imageView.frame = CGRect(x: 0, y: 0, width: selectedImage.size.width, height: selectedImage.size.height)
+        scrollView.contentSize = selectedImage.size
+        } else if let selectedImage = info[UIImagePickerControllerOriginalImage] as? UIImage {
+            imageView.image = selectedImage
+            imageView.contentMode = .center
+            imageView.frame = CGRect(x: 0, y: 0, width: selectedImage.size.width, height: selectedImage.size.height)
+            scrollView.contentSize = selectedImage.size
+        } else { print("wrong") }
         
         let scrollViewFrame = scrollView.frame
         let scaleWidth = scrollViewFrame.size.width / scrollView.contentSize.width
