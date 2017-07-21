@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="ExamOne" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9bZ-VK-fYp">
+                                <rect key="frame" x="0.0" y="590" width="375" height="77"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HNX-v9-rsa">
+                                        <rect key="frame" x="97.5" y="17" width="180" height="44"/>
+                                        <color key="backgroundColor" red="0.16862745098039217" green="0.16862745098039217" blue="0.16862745098039217" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="44" id="bgn-u1-XEA"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="20"/>
+                                        <size key="titleShadowOffset" width="-1" height="1"/>
+                                        <state key="normal" title="Pick an Image">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="pickAnImageButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="C42-dV-7LT"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" red="0.97601670026779175" green="0.87297958135604858" blue="0.092192582786083221" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="HNX-v9-rsa" secondAttribute="bottom" constant="16" id="QxZ-vh-o1N"/>
+                                    <constraint firstItem="HNX-v9-rsa" firstAttribute="centerX" secondItem="9bZ-VK-fYp" secondAttribute="centerX" id="lS0-TR-0fr"/>
+                                    <constraint firstItem="HNX-v9-rsa" firstAttribute="width" secondItem="9bZ-VK-fYp" secondAttribute="width" multiplier="180/375" id="q1A-oS-B8s"/>
+                                    <constraint firstAttribute="height" constant="77" id="vsl-HE-P0M"/>
+                                </constraints>
+                            </view>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0qS-0B-6iU">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="590"/>
+                            </scrollView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="0qS-0B-6iU" secondAttribute="trailing" id="0o5-l3-efF"/>
+                            <constraint firstItem="9bZ-VK-fYp" firstAttribute="top" secondItem="0qS-0B-6iU" secondAttribute="bottom" id="3wb-zq-gRH"/>
+                            <constraint firstAttribute="trailing" secondItem="9bZ-VK-fYp" secondAttribute="trailing" id="SWm-Hr-FwB"/>
+                            <constraint firstItem="0qS-0B-6iU" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="WDT-Lv-NzQ"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="9bZ-VK-fYp" secondAttribute="bottom" id="ZH2-1q-cLa"/>
+                            <constraint firstItem="0qS-0B-6iU" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="cys-zS-czY"/>
+                            <constraint firstItem="9bZ-VK-fYp" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="mft-S4-YIq"/>
+                        </constraints>
+                    </view>
+                    <nil key="simulatedStatusBarMetrics"/>
+                    <connections>
+                        <outlet property="scrollView" destination="0qS-0B-6iU" id="R34-27-lAQ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="138.40000000000001" y="138.0809595202399"/>
+        </scene>
+    </scenes>
+</document>
